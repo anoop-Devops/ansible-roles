@@ -1,0 +1,7 @@
+---
+- name: Install httpd package
+  yum: name={{pkg}} state=installed
+- name: copy the index.html file
+  copy: src=index.html dest=/var/www/html/index.html
+- name: Start the httpd service
+  service: name={{pkg}} state=started 
